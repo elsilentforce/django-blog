@@ -2,5 +2,6 @@
 *.log
 *.pot
 *.pyc
-__pycache__
+blog/__pycache__
+mysite/__pycache__
 db.sqlite3
