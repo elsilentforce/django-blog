@@ -1,0 +1,11 @@
+#: templates/blog/base.html:15
+msgid "BlogTitle"
+msgstr "My Blog"
+
+#: templates/blog/base.html:16
+msgid "BlogDescription"
+msgstr "This is my blog"
+
+#: templates/blog/post/detail.html:7
+msgid "PostPublishInfo"
+msgstr "Published {publish} by {author}"
