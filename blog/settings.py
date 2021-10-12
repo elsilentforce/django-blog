@@ -5,3 +5,7 @@ EMAIL_PORT = 25
 # EMAIL_USE_TLS =
 # EMAIL_USE_SSL =
 EMAIL_BACKEND = 'django.mail.backends.console.EmailBackend'
+LANGUAGE_CODE = 'en'
+USE_I18N = True
+USE_L10N = True
+USE_TZ = True
