@@ -1,3 +1,4 @@
+from django.utils.translation import ugettext_lazy as _
 from django import forms
 from django.views.generic import ListView
 from django.shortcuts import render, get_object_or_404
@@ -16,7 +17,8 @@ def post_detail(request, year, month, day, post):
     publish__month = month,
     publish__day = day
   )
-  return render(request, 'blog/post/detail.html', { 'post': post })
+  publish_info = _("PostPublishInfo").format(publish=post.publish, author=post.author)
+  return render(request, 'blog/post/detail.html', { 'publish_info': publish_info, 'post': post })
 
 def post_share(request, post_id):
   # Retrieve post by ID
@@ -26,7 +28,7 @@ def post_share(request, post_id):
     # Form was submitted
     form = EmailPostForm(request.POST)
     if form.is_valid():
-      # Form fields passed validatio
+      # Form fields passed validation
       cd = form.cleaned_data
       post_url = request.build_absolute_uri(post.get_absolute_url())
       subject = f"{cd['name']} recommends you read {post.title}"
