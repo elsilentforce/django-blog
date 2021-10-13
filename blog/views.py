@@ -1,4 +1,3 @@
-from django.utils.translation import ugettext_lazy as _
 from django import forms
 from django.views.generic import ListView
 from django.shortcuts import render, get_object_or_404
@@ -17,8 +16,7 @@ def post_detail(request, year, month, day, post):
     publish__month = month,
     publish__day = day
   )
-  publish_info = _("PostPublishInfo").format(publish=post.publish, author=post.author)
-  return render(request, 'blog/post/detail.html', { 'publish_info': publish_info, 'post': post })
+  return render(request, 'blog/post/detail.html', { 'post': post })
 
 def post_share(request, post_id):
   # Retrieve post by ID
@@ -37,7 +35,7 @@ def post_share(request, post_id):
       sent = True
   else:
     form = EmailPostForm()
-    return render(request, 'blog/post/share.html', { 'post': post, 'form': form, 'sent': sent })
+  return render(request, 'blog/post/share.html', { 'post': post, 'form': form, 'sent': sent })
 
 class PostListView(ListView):
   queryset = Post.published.all()
