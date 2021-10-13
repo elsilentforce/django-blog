@@ -1,4 +1,9 @@
-#: templates/blog/base.html:15
+#: models.py:32
+msgid "PostPublishInfo"
+msgstr "Published {publish} by {author}"
+
+#: templates/blog/base.html:15 templates/blog/post/list.html:3
+#: templates/blog/post/list.html:5
 msgid "BlogTitle"
 msgstr "My Blog"
 
@@ -6,6 +11,14 @@ msgstr "My Blog"
 msgid "BlogDescription"
 msgstr "This is my blog"
 
-#: templates/blog/post/detail.html:7
-msgid "PostPublishInfo"
-msgstr "Published {publish} by {author}"
+#: templates/blog/post/detail.html:12
+msgid "SharePost"
+msgstr "Share this post"
+
+#: templates/blog/post/pagination.html:5
+msgid "Previous"
+msgstr "Previous"
+
+#: templates/blog/post/pagination.html:11
+msgid "Next"
+msgstr "Next"
